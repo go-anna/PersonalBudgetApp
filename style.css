@@ -1,0 +1,512 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body
+{
+	background-image: url("img/piggybank.jpg");
+	background-size: cover;
+	position: relative; 
+	font-family: 'Lora', sans-serif;
+    font-size: 18px;
+	padding-bottom: 60px;
+	min-height: 100vh;
+	
+}
+
+h2
+{
+	text-align: center;
+	font-weight: 500;
+	letter-spacing: 2px;
+	margin-bottom: 10px
+}
+
+#content
+{
+	background-color: white;
+	width: 400px;
+	padding: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 70px;
+	-webkit-box-shadow: 5px 5px 23px 3px rgba(158,158,158,0.9);
+	-moz-box-shadow: 5px 5px 23px 3px rgba(158,158,158,0.9);
+	box-shadow: 5px 5px 23px 3px rgba(158,158,158,0.9);
+}
+
+#error
+{
+	color: red;
+	margin-bottom: 5px;
+	width: 300px;
+	font-size: 14px;
+	background: rgba(255,0,0,0.1);
+	border-radius: 5px;
+	text-align: center;
+	box-sizing: border-box;
+
+}
+
+.label
+{
+	font-size: 18px;
+	color: #222;
+	margin: 10px 0;
+	font-weight: 400;
+}
+
+.input
+{
+	width: 300px;
+	background-color: #eee;
+	color: #666;
+	margin-bottom: 10px;
+	border: 2px solid #ddd;
+	border-radius: 5px;
+	font-size: 18px;
+	font-weight: 100;
+	padding: 10px;
+	box-sizing: border-box;
+	outline: none;
+}
+
+.input:focus
+{	-webkit-box-shadow: 0px 0px 10px 3px rgba(158,158,158,0.9);
+	-moz-box-shadow: 0px 0px 10px 3px rgba(158,158,158,0.9);
+	box-shadow: 0px 0px 10px 3px rgba(158,158,158,0.9);
+	border: 2px solid #a5cda5;
+	background-color: #e9f3e9;
+	color: #438d43;
+	
+}
+
+button
+{
+	width: 300px;
+	background-color: #35a03b;
+	font-size: 20px;
+	color: #fff;
+	padding: 15px 10px;
+	margin-top:20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	letter-spacing: 2px;
+	outline: none;
+}
+
+button:hover
+{
+	background-color:#36b03c;
+}
+
+button:focus
+{
+	-webkit-box-shadow: 0px 0px 15px 4px rgba(158,158,158,0.9);
+	-moz-box-shadow: 0px 0px 15px 4px rgba(158,158,158,0.9);
+	box-shadow: 0px 0px 15px 4px rgba(158,158,158,0.9);
+}
+
+#container
+{
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+.form
+{
+    text-align: center;
+	margin-top: 10px;
+}
+
+.formLink
+{
+    color: #222;
+	font-size: 16px;
+    cursor: pointer;
+}
+
+.formLink:hover 
+{
+    text-decoration: underline;
+}
+
+h1
+{
+	font-family: 'Cinzel', serif;
+	text-align: center;
+	font-size: 36px;
+	color: #daa520;
+	margin-top: 25px;
+}
+
+h3
+{
+	
+	text-align: center;
+	font-size: 28px;
+	color: #222;
+	font-weight: 500;
+	margin-top: 100px;
+}
+
+header
+{
+	background: #001a00;
+	width: 100%;
+	height: 90px;
+	padding-top: 5px;
+}
+
+.leftSide img
+{
+	margin-left: 50px;
+	width: 80px;
+	hight: 80px;
+}
+
+.leftSide img
+{
+	transition: all 0.2s ease-in-out;
+	
+}
+
+.leftSide:hover img
+{
+	-webkit-transform: scale(1.05) rotate(-5deg);
+	-ms-transform: scale(1.05) rotate(-5deg);
+	transform: scale(1.05) rotate(-5deg);
+}
+
+.logBtn
+{
+	background-color: #35a03b;
+	color: #fff;
+	padding: 15px 10px;
+	margin-top:20px;
+	margin-right: 40px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	letter-spacing: 2px;
+	float: right;
+	text-decoration: none;
+	outline: none;
+	
+}
+
+.logBtn:hover
+{
+	background-color:#36b03c;
+}
+
+.logBtn:focus
+{
+	-webkit-box-shadow: 0px 0px 15px 4px rgba(158,158,158,0.9);
+	-moz-box-shadow: 0px 0px 15px 4px rgba(158,158,158,0.9);
+	box-shadow: 0px 0px 15px 4px rgba(158,158,158,0.9);
+}
+
+#footer
+{
+	position: absolute;
+	padding:20px;
+	line-height: 20px;
+	background-color: #001a00;
+	font-size: 14px;
+	text-align: center;
+	color: #F0F7D4;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	letter-spacing: 2px;
+	opacity: 0.8;
+	
+}
+
+.menu
+{
+	background-color: #86b300;
+	width: 100%;
+	margin-top: 20px;
+	margin-bottom: 25px;
+	text-align: center;
+	padding: 10px 0;
+	
+}
+
+ol
+{
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	font-size: 20px;
+	height: 35px;
+	line-height: 200%;
+	display: inline-block;
+}
+
+ol a
+
+{
+	color: #222;
+	text-decoration: none;
+	display: block;
+}
+
+ol > li
+{
+	float: left;
+	width: 250px;
+	height: 40px;
+	border-right: 1px dashed #659504;
+	
+}
+
+ol > li:first-child
+{
+	border-left: 1px dashed #659504;
+}
+
+ol > li:hover
+{
+	pointer: cursor;
+	background-color: #006600;
+}
+
+ol > li:hover > a
+{
+	color: #daa520;
+	transition: 0.5s;
+}
+
+ol > li > ul
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	height: 40px;
+	display: none;
+}
+
+ol > li:hover > ul
+{
+	display: block;
+	transition: 0.5s;
+}
+
+ol > li > ul > li
+{
+	background-color: #c6ff1a;
+	position: relative;
+	z-index: 100px;
+	border-top: 1px dashed #659504;
+}
+
+ol > li > ul > li:hover
+{
+	background-color: #009900;
+}
+
+ol > li > ul > li:hover a
+{
+	color: #ffa500;
+	transition: 0.5s;
+}
+
+#addExpense
+{
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #fff;
+}
+
+.labelExpense
+{
+	float: left;
+	margin-left: 50px;
+	margin-bottom: 30px;
+}
+
+.titleExpense
+{
+	font-weight: 600;
+	color: #222;
+	margin-left: 40px;;
+	padding-bottom: 20px;
+}
+
+.paymentMetod
+{
+	padding: 0;
+	padding-left: 70px;
+	padding-right: 50px;
+	cursor: pointer;
+	width: 300px;
+	margin-left: 20px;
+	list-style-type: none;
+	display: inline-block;
+	line-height: 180%;
+}
+
+.paymentAndCategories
+{
+	padding-bottom: 20px;
+}
+
+textarea
+{
+	border: 1px solid #001a00;
+	font-size: 14px;
+	margin-bottom:10px;
+	margin-top: 5px;
+	margin-left: 60px;
+}
+
+.expenseBtn
+{
+	padding-bottom: 30px;
+	margin-left: 80px;
+	padding-left: 50px;
+	float: left;
+}
+
+h4
+{
+	font-family: 'Cinzel', serif;
+	text-align: center;
+	font-size: 28px;
+	color: #001a00;
+	font-weight: 400;
+	padding-top: 20px;
+}
+
+
+h5 {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.balanceTable
+{
+	border-collapse: collapse;
+	margin-left: 40px;
+	margin-top: 40px;
+	margin-right: 20px;
+	margin-bottom: 40px;
+	text-align: center;
+	border: 1px solid #111;
+}
+
+.balanceTable th, td
+{
+	padding: 8px;
+	width: 180px;
+}
+
+#expensesTable th
+{
+	background: #e60000;
+	color: #fff;
+}
+
+#expensesTable tr:nth-child(odd)
+{
+	background: #fff;
+}
+
+#expensesTable tr:nth-child(even)
+{
+	background: #ffcccc;
+}
+
+#incomesTable
+{
+	float: left;
+}
+
+#expensesTable
+{
+	float: left;
+}
+
+
+#incomesTable th
+{
+	background: #00994d;
+	color: #fff;
+}
+
+#incomesTable tr:nth-child(odd)
+{
+	background: #fff;
+}
+
+#incomesTable tr:nth-child(even)
+{
+	background: #b3ffd9;
+}
+
+#incomesTable .total 
+{
+	color: #green;
+}
+
+.total 
+{
+	font-weight: bold;
+}
+
+#incomeChart
+{
+	position: relative;
+	width: 500px;
+	hight: 500px;
+	
+}
+
+.chartContainer
+{
+	position: relative;
+	width: 500px;
+	hight: 500px;
+	
+}
+
+.revenue
+{
+	float: left;
+}
+
+.loss
+{
+	float: left;
+}
+
+section
+{
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 5px;
+	margin-bottom: 20px;
+	border: 2px dotted #001a00;
+}
+
+#summary
+{
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 40px;
+	font-size: 16px;
+	color: #006600;
+	text-align: center;
+}

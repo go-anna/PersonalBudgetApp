@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<title>Your personal budget</title>
+	<meta name="description" content="Front page">
+	<meta name="keywords" content="form, front page, budget, finances, managing">
+	
+	<meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1">
+	
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" defer></script>
+	<script src="charts.js" defer></script>
+
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+	<script src="summary.js" defer></script>
+	
+	<!--[if lt IE 9]>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+	<div id="container">
+		<header>
+			<div class="leftSide">
+				<a href="mainMenu.html"><img src="img/piggyL.png" style="float: left;"/></a>
+			</div>
+			<div class="rightSide">
+				<a href="PersonalBudget.html" class="logBtn">Sign Out</a>
+			</div>
+			<div class="title">
+				<h1>Personal Budget app</h1>
+			</div>
+			<div style="clear:both;"></div>
+		</header>	
+			<div class="menu">
+				<ol>
+				<li><a href="#">Add income</a></li>
+				<li><a href="#">Add expense</a></li>
+				<li><a href="#">Show balance</a>
+					<ul>
+						<li><a href="#">Current month</a></li>
+						<li><a href="#">Previous month</a></li>
+						<li><a href="#">Current year</a></li>
+						<li><a href="#">Custom date</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Settings</a></li>
+				<ol>
+			</div>
+			<div style="clear:both;"></div>
+		<main>
+			<form id="addExpense"><h4>Add details of expense</h4>
+				<div class="labelExpense">
+					<label for="date" class="titleExpense">Start date:</label>
+					<input class="input" id="date" name="date" type="date" value="2020-10-01" min="2018-01-01">
+				</div>
+				<div class="labelExpense">
+					<label for="date" class="titleExpense">Date:</label>
+					<input class="input" id="date" name="date" type="date" value="2020-10-31" min="2018-01-01">
+				</div>
+				<div style="clear:both;"></div>
+				<div class="summary">
+				<div id="summary">
+				<h2>Your balance is 2006.29 PLN</h2>
+				<h2>Congratulations. Great you manage your finance</h2>
+				</div>
+				<section>
+					<h4>Revenue statement</h4>
+					<div class="revenue">
+						<div id="incomesTable">
+							<table class="balanceTable">
+								<tr>
+									<th>Category</th>
+									<th>Amount in PLN</th>
+								</tr>
+								<tr>
+									<td>Salary</td>
+									<td>3000.00</td>
+								</tr>
+								<tr>
+									<td>Bank interest</td>
+									<td>12.64</td>
+								</tr>
+								<tr>
+									<td>Sales</td>
+									<td>120.00</td>
+								</tr>
+								<tr>
+									<td>Other</td>
+									<td>250.00</td>
+								</tr>
+								<tr class="total">
+									<td>Total</td>
+									<td>3382,64</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="revenue">
+						<div class="chartContainer">
+							<canvas id="incomeChart"></canvas> 
+						</div>
+					</div>				
+					<div style="clear:both"></div>						
+				</section>
+	
+				<section>
+					<h4>Expense statement</h4>
+					<div class="loss">
+						<div id="expensesTable">
+							<table class="balanceTable">
+								<tr>
+									<th>Category</th>
+									<th>Amount in PLN</th>
+								</tr>
+								<tr>
+									<td>Food</td>
+									<td>340.00</td>
+								</tr>
+								<tr>
+									<td>Housing costs</td>
+									<td>650.00</td>
+								</tr>
+								<tr>
+									<td>Transportation</td>
+									<td>23.50</td>
+								</tr>
+								<tr>
+									<td>Telecommunication</td>
+									<td>23.65</td>
+								</tr>
+								<tr>
+									<td>Hygiene</td>
+									<td>13.20</td>
+								</tr>
+								<tr>
+									<td>Travel</td>
+									<td>120.00</td>
+								</tr>
+								<tr>
+									<td>Education</td>
+									<td>152.00</td>
+								</tr>
+								<tr>
+									<td>Books</td>
+									<td>54.00</td>
+								</tr>
+								<tr class="total">
+									<td>Total</td>
+									<td>1376,35</td>
+								</tr>
+							
+							</table>
+						</div>
+					</div>
+					<div class="loss">
+						<div class="chartContainer">
+							<canvas id="expenseChart"></canvas>
+						</div>
+					</div>						
+					<div style="clear:both"></div>						
+				</section>		
+			</form>		
+		</main>
+	</div>
+	<div id="footer">
+		Copyright © 2020 Personal Budget All Rights Reserved Thank you for your visit!
+	</div>
+</body>
+</html>
