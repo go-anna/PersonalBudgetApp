@@ -167,7 +167,7 @@ header
 {
 	margin-left: 50px;
 	width: 80px;
-	hight: 80px;
+	height: 80px;
 }
 
 .leftSide img
@@ -275,7 +275,7 @@ ol > li:first-child
 
 ol > li:hover
 {
-	pointer: cursor;
+	cursor: pointer;
 	background-color: #006600;
 }
 
@@ -304,7 +304,7 @@ ol > li > ul > li
 {
 	background-color: #c6ff1a;
 	position: relative;
-	z-index: 100px;
+	z-index: 100;
 	border-top: 1px dashed #659504;
 }
 
@@ -319,7 +319,7 @@ ol > li > ul > li:hover a
 	transition: 0.5s;
 }
 
-#addExpense
+#addData
 {
 	width: 1000px;
 	margin-left: auto;
@@ -333,7 +333,7 @@ ol > li > ul > li:hover a
 .labelExpense
 {
 	float: left;
-	margin-left: 50px;
+	margin-left: 30px;
 	margin-bottom: 30px;
 }
 
@@ -458,28 +458,26 @@ h5 {
 
 #incomesTable .total 
 {
-	color: #green;
+	font-weight: 600;
 }
 
-.total 
+#expensesTable .total
 {
-	font-weight: bold;
+	font-weight: 600;
 }
 
 #incomeChart
 {
 	position: relative;
 	width: 500px;
-	hight: 500px;
-	
+	height: 250px;
 }
 
 .chartContainer
 {
 	position: relative;
 	width: 500px;
-	hight: 500px;
-	
+	height: 250px;
 }
 
 .revenue

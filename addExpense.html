@@ -1,118 +1,118 @@
-	<!DOCTYPE html>
-	<html lang="en">
-	<head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-		<meta charset="utf-8">
-		<title>Your personal budget</title>
-		<meta name="description" content="Front page">
-		<meta name="keywords" content="form, front page, budget, finances, managing">
-		
-		<meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1">
-		
-		<link rel="stylesheet" href="style.css">
+	<meta charset="utf-8" />
+	<title>Your personal budget</title>
+	<meta name="description" content="Front page" />
+	<meta name="keywords" content="form, front page, budget, finances, managing" />
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	
+	<link rel="stylesheet" href="style.css">
+			
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+	
+	
+	<!--[if lt IE 9]>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+	<div id="container">
+		<header>
+			<div class="leftSide">
+				<a href="mainMenu.html"><img src="img/piggyL.png" alt="Logo Personal Budget" style="float: left;"/></a>
+			</div>
+			<div class="rightSide">
+				<a href="PersonalBudget.html" class="logBtn">Sign Out</a>
+			</div>
+			<div class="title">
+				<h1>Personal Budget app</h1>
+			</div>
+			<div style="clear:both;"></div>
+		</header>	
+			<div class="menu">
+				<ol>
+				<li><a href="#">Add income</a></li>
+				<li><a href="#">Add expense</a></li>
+				<li><a href="#">Show balance</a>
+					<ul>
+						<li><a href="#">Current month</a></li>
+						<li><a href="#">Previous month</a></li>
+						<li><a href="#">Current year</a></li>
+						<li><a href="#">Custom date</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Settings</a></li>
+				</ol>
+			</div>
+			<div style="clear:both;"></div>
+		<main>
+			<form id="addData"><h4>Add details of expense</h4>
+				<div class="labelExpense">
+					<label for="amount" class="titleExpense">Amount:</label>
+					<input class="input" id="amount" name="amount" type="text" placeholder="1000">
+				</div>
+				<div class="labelExpense">
+					<label for="date" class="titleExpense">Date:</label>
+					<input class="input" id="date" name="date" type="date" value="" min="2018-01-01">
+				</div>
+				<div style="clear:both;"></div>
 				
-		<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
-		
-		
-		<!--[if lt IE 9]>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-		<![endif]-->
-
-	</head>
-
-	<body>
-		<div id="container">
-			<header>
-				<div class="leftSide">
-					<a href="mainMenu.html"><img src="img/piggyL.png" style="float: left;"/></a>
+				<div class="paymentAndCategories">
+					<span class="titleExpense">Payment method:</span><br/>
+						<label class="paymentMetod"><input type="radio" name="paymentMetod" value="cash"> Cash</label>
+						<label class="paymentMetod"><input type="radio" name="paymentMetod" value="debitCard" checked> Debit Card</label>
+						<label class="paymentMetod"><input type="radio" name="paymentMetod" value="creditCard"> Credit Card</label><br/>
 				</div>
-				<div class="rightSide">
-					<a href="PersonalBudget.html" class="logBtn">Sign Out</a>
+
+				<div class="paymentAndCategories">
+					<span class="titleExpense">Expence category:</span><br/>
+						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="food"> Food</label>
+						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="housing costs" > Housing costs</label>
+						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="transportation"> Transportation</label><br/>
+					
+						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="telecommunication"> Telecommunication</label>
+						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="health care" > Health care</label>
+						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="clothes"> Clothes</label><br/>
+							
+						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="hygiene"> Hygiene</label>
+						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="children" > Children</label>
+						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="entertainment"> Entertainment</label><br/>
+
+						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="travel"> Travel</label>
+						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="education" > Education</label>
+						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="books"> Books</label><br/>
+
+						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="savings"> Savings</label>
+						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="pension" > Pension</label>
+						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="debt repayment"> Debt repayment</label><br/>
+					
+						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="donation"> Donation</label>
+						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="other expenses"> Other expenses</label><br/>
 				</div>
-				<div class="title">
-					<h1>Personal Budget app</h1>
+				<div class="paymentAndCategories">
+					<span class="titleExpense">Comment (optional):<br/></span>
+					<textarea id="comment" name="comment" rows="3" cols="25" placeholder="Add your comment"></textarea>
+				</div>
+				
+				<div class="expenseBtn">
+				<button type="reset" onclick="window.location.href = '#'">Cancel</button>
+				</div>
+				
+				<div class="expenseBtn">
+				<button type="submit">Submit</button>
 				</div>
 				<div style="clear:both;"></div>
-			</header>	
-				<div class="menu">
-					<ol>
-					<li><a href="#">Add income</a></li>
-					<li><a href="#">Add expense</a></li>
-					<li><a href="#">Show balance</a>
-						<ul>
-							<li><a href="#">Current month</a></li>
-							<li><a href="#">Previous month</a></li>
-							<li><a href="#">Current year</a></li>
-							<li><a href="#">Custom date</a></li>
-						</ul>
-					</li>
-					<li><a href="#">Settings</a></li>
-					<ol>
-				</div>
-				<div style="clear:both;"></div>
-			<main>
-				<form id="addExpense"><h4>Add details of expense</h4>
-					<div class="labelExpense">
-						<label for="amount" class="titleExpense">Amount:</label>
-						<input class="input" id="amount" name="amount" type="text" placeholder="1000">
-					</div>
-					<div class="labelExpense">
-						<label for="date" class="titleExpense">Date:</label>
-						<input class="input" id="date" name="date" type="date" value="" min="2018-01-01">
-					</div>
-					<div style="clear:both;"></div>
-					
-					<div class="paymentAndCategories">
-						<span class="titleExpense">Payment method:</span><br/>
-							<label class="paymentMetod"><input type="radio" name="paymentMetod" value="cash"> Cash</label>
-							<label class="paymentMetod"><input type="radio" name="paymentMetod" value="debitCard" checked> Debit Card</label>
-							<label class="paymentMetod"><input type="radio" name="paymentMetod" value="creditCard"> Credit Card</label><br/>
-					</div>
+			</form>		
+		</main>
 
-					<div class="paymentAndCategories">
-						<span class="titleExpense">Expence category:</span><br/>
-							<label class="paymentMetod"><input type="radio" name="paymentCategory" value="food"> Food</label>
-							<label class="paymentMetod"><input type="radio" name="paymentCategory" value="housing costs" > Housing costs</label>
-							<label class="paymentMetod"><input type="radio" name="paymentCategory" value="transportation"> Transportation</label><br/>
-						
-							<label class="paymentMetod"><input type="radio" name="paymentCategory" value="telecommunication"> Telecommunication</label>
-							<label class="paymentMetod"><input type="radio" name="paymentCategory" value="health care" > Health care</label>
-							<label class="paymentMetod"><input type="radio" name="paymentCategory" value="clothes"> Clothes</label><br/>
-								
-							<label class="paymentMetod"><input type="radio" name="paymentCategory" value="hygiene"> Hygiene</label>
-							<label class="paymentMetod"><input type="radio" name="paymentCategory" value="children" > Children</label>
-							<label class="paymentMetod"><input type="radio" name="paymentCategory" value="entertainment"> Entertainment</label><br/>
-
-							<label class="paymentMetod"><input type="radio" name="paymentCategory" value="travel"> Travel</label>
-							<label class="paymentMetod"><input type="radio" name="paymentCategory" value="education" > Education</label>
-							<label class="paymentMetod"><input type="radio" name="paymentCategory" value="books"> Books</label><br/>
-
-							<label class="paymentMetod"><input type="radio" name="paymentCategory" value="savings"> Savings</label>
-							<label class="paymentMetod"><input type="radio" name="paymentCategory" value="pension" > Pension</label>
-							<label class="paymentMetod"><input type="radio" name="paymentCategory" value="debt repayment"> Debt repayment</label><br/>
-						
-							<label class="paymentMetod"><input type="radio" name="paymentCategory" value="donation"> Donation</label>
-							<label class="paymentMetod"><input type="radio" name="paymentCategory" value="other expenses"> Other expenses</label><br/>
-					</div>
-					<div class="paymentAndCategories">
-						<span class="titleExpense">Comment (optional):<br/></span>
-						<textarea id="comment" name="comment" rows="3" cols="25" placeholder="Add your comment"></textarea>
-					</div>
-					
-					<div class="expenseBtn">
-					<button type="reset" onclick="window.location.href = '#'">Cancel</button>
-					</div>
-					
-					<div class="expenseBtn">
-					<button type="submit">Submit</button>
-					</div>
-					<div style="clear:both;"></div>
-				</form>		
-			</main>
-
-		</div>
-		<div id="footer">
-			Copyright © 2020 Personal Budget All Rights Reserved Thank you for your visit!
-		</div>
-	</body>
-	</html>
+	</div>
+	<div id="footer">
+		Copyright © 2020 Personal Budget All Rights Reserved Thank you for your visit!
+	</div>
+</body>
+</html>

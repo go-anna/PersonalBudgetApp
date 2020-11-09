@@ -7,7 +7,7 @@
 	<meta name="description" content="Front page">
 	<meta name="keywords" content="form, front page, budget, finances, managing">
 	
-	<meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="X-Ua-Compatible" content="IE=edge">
 	
 	<link rel="stylesheet" href="style.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" defer></script>
@@ -26,7 +26,7 @@
 	<div id="container">
 		<header>
 			<div class="leftSide">
-				<a href="mainMenu.html"><img src="img/piggyL.png" style="float: left;"/></a>
+				<a href="mainMenu.html"><img src="img/piggyL.png" alt="Logo Personal Budget" style="float: left;"/></a>
 			</div>
 			<div class="rightSide">
 				<a href="PersonalBudget.html" class="logBtn">Sign Out</a>
@@ -49,24 +49,25 @@
 					</ul>
 				</li>
 				<li><a href="#">Settings</a></li>
-				<ol>
+				</ol>
 			</div>
 			<div style="clear:both;"></div>
 		<main>
-			<form id="addExpense"><h4>Add details of expense</h4>
+			<form id="addData"><h4>Add details of expense</h4>
 				<div class="labelExpense">
-					<label for="date" class="titleExpense">Start date:</label>
-					<input class="input" id="date" name="date" type="date" value="2020-10-01" min="2018-01-01">
+					<label for="date1" class="titleExpense">Start date:</label>
+					<input class="input" id="date1" name="date1" type="date" value="2020-10-01" min="2018-01-01">
 				</div>
 				<div class="labelExpense">
-					<label for="date" class="titleExpense">Date:</label>
-					<input class="input" id="date" name="date" type="date" value="2020-10-31" min="2018-01-01">
+					<label for="date2" class="titleExpense">End date:</label>
+					<input class="input" id="date2" name="date2" type="date" value="2020-10-31" min="2018-01-01">
 				</div>
 				<div style="clear:both;"></div>
 				<div class="summary">
 				<div id="summary">
 				<h2>Your balance is 2006.29 PLN</h2>
 				<h2>Congratulations. Great you manage your finance</h2>
+				</div>
 				</div>
 				<section>
 					<h4>Revenue statement</h4>
