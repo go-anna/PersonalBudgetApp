@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
 
-	<meta charset="utf-8" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Your personal budget</title>
-	<meta name="description" content="Front page" />
-	<meta name="keywords" content="form, front page, budget, finances, managing" />
+	<meta name="description" content="Front page">
+	<meta name="keywords" content="form, front page, budget, finances, managing">
 	
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="X-Ua-Compatible" content="IE=edge">
 	
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="style.css">
 			
 	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
@@ -21,98 +23,152 @@
 </head>
 
 <body>
-	<div id="container">
-		<header>
-			<div class="leftSide">
-				<a href="mainMenu.html"><img src="img/piggyL.png" alt="Logo Personal Budget" style="float: left;"/></a>
-			</div>
-			<div class="rightSide">
-				<a href="PersonalBudget.html" class="logBtn">Sign Out</a>
-			</div>
-			<div class="title">
-				<h1>Personal Budget app</h1>
-			</div>
-			<div style="clear:both;"></div>
-		</header>	
-			<div class="menu">
-				<ol>
-				<li><a href="#">Add income</a></li>
-				<li><a href="#">Add expense</a></li>
-				<li><a href="#">Show balance</a>
-					<ul>
-						<li><a href="#">Current month</a></li>
-						<li><a href="#">Previous month</a></li>
-						<li><a href="#">Current year</a></li>
-						<li><a href="#">Custom date</a></li>
-					</ul>
-				</li>
-				<li><a href="#">Settings</a></li>
-				</ol>
-			</div>
-			<div style="clear:both;"></div>
-		<main>
-			<form id="addData"><h4>Add details of expense</h4>
-				<div class="labelExpense">
-					<label for="amount" class="titleExpense">Amount:</label>
-					<input class="input" id="amount" name="amount" type="text" placeholder="1000">
-				</div>
-				<div class="labelExpense">
-					<label for="date" class="titleExpense">Date:</label>
-					<input class="input" id="date" name="date" type="date" value="" min="2018-01-01">
-				</div>
-				<div style="clear:both;"></div>
+	<header>
+		<nav class="navbar navbar-dark">
+			<a class="navbar-brand" href="mainMenu.html"><img src="img/piggyL.png" width="80" height="80" class="d-inline-block mr-1 align-top" alt="Logo Personal Budget"></a>
+			<a class="navbar-text">
+					<h1 class="text-uppercase text-center text-md-left d-none d-md-block">Welcome to Personal Budget app</h1>
+			</a>
+			<button class="btn text-uppercase mb-2 text-white font-weight-bold" type="button">Sign Out</button>
+		</nav>
+	</header>	
+	
+	<div class="menu">	
+		
+		<nav class="navbar navbar-dark navbar-expand-md">
+		
+			<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			
+			<div class="collapse navbar-collapse" id="mainmenu">
+				<ul class="navbar-nav mr-auto">
 				
-				<div class="paymentAndCategories">
-					<span class="titleExpense">Payment method:</span><br/>
-						<label class="paymentMetod"><input type="radio" name="paymentMetod" value="cash"> Cash</label>
-						<label class="paymentMetod"><input type="radio" name="paymentMetod" value="debitCard" checked> Debit Card</label>
-						<label class="paymentMetod"><input type="radio" name="paymentMetod" value="creditCard"> Credit Card</label><br/>
-				</div>
-
-				<div class="paymentAndCategories">
-					<span class="titleExpense">Expence category:</span><br/>
-						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="food"> Food</label>
-						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="housing costs" > Housing costs</label>
-						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="transportation"> Transportation</label><br/>
+					<li class="nav-item">
+						<a class="nav-link" href="#"> Add income </a>
+					</li>
 					
-						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="telecommunication"> Telecommunication</label>
-						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="health care" > Health care</label>
-						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="clothes"> Clothes</label><br/>
+					<li class="nav-item">
+						<a class="nav-link" href="#"> Add expense </a>
+					</li>
+					
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu" aria-haspopup="true"> Show balance </a>
+						
+						<div class="dropdown-menu" aria-labelledby="submenu">
+						
+							<a class="dropdown-item" href="#"> Current month </a>
+							<a class="dropdown-item" href="#"> Previous month </a>	
+												
+							<a class="dropdown-item" href="#"> Current year </a>
+							<a class="dropdown-item" href="#"> Custom date </a>
+						
+						</div>
+						
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link" href="#"> Settings </a>
+					</li>
 							
-						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="hygiene"> Hygiene</label>
-						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="children" > Children</label>
-						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="entertainment"> Entertainment</label><br/>
-
-						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="travel"> Travel</label>
-						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="education" > Education</label>
-						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="books"> Books</label><br/>
-
-						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="savings"> Savings</label>
-						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="pension" > Pension</label>
-						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="debt repayment"> Debt repayment</label><br/>
+				</ul>
+				
+				<form class="form-inline d-none d-xl-block">
+				
+					<input class="form-control mr-1" type="search" placeholder="Search" aria-label="Search">
+					<button class="btn btn-sm" type="submit">Search</button>
+				
+				</form>
+								
+			</div>
+		
+		</nav>
+	</div>
+	
+	<main>
+		
+		<article class="expense">
+		
+			<div class="container">
+				
+				<div class="row">
 					
-						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="donation"> Donation</label>
-						<label class="paymentMetod"><input type="radio" name="paymentCategory" value="other expenses"> Other expenses</label><br/>
-				</div>
-				<div class="paymentAndCategories">
-					<span class="titleExpense">Comment (optional):<br/></span>
-					<textarea id="comment" name="comment" rows="3" cols="25" placeholder="Add your comment"></textarea>
-				</div>
+					<div class="bg-white text-body">
+					
+						<header id="addData">			
+							<h4 class="text-uppercase text-center subtitle">Add details of expense</h4>
+						</header>
+					
+						<div class="labelExpense">
+							<label for="amount" class="titleExpense mr-1 mr-md-0 ml-2 ml-md-1 ml-lg-5">Amount:</label>
+							<input class="input text-muted mr-lg-5" id="amount" name="amount" type="text" placeholder="1000">
+						</div>
+						
+						<div class="labelExpense">
+							<label for="date" class="titleExpense mr-2 mr-md-0 ml-2 ml-md-1 ml-lg-5">Date:</label>
+							<input class="input ml-4 ml-lg-0 text-muted" id="date" name="date" type="date" value="" min="2018-01-01">
+						</div>
+					
+						<div style="clear:both;"></div>
 				
-				<div class="expenseBtn">
-				<button type="reset" onclick="window.location.href = '#'">Cancel</button>
-				</div>
-				
-				<div class="expenseBtn">
-				<button type="submit">Submit</button>
-				</div>
-				<div style="clear:both;"></div>
-			</form>		
-		</main>
+						<div class="paymentAndCategories ml-sm-5">
+							<span class="titleExpense ml-4">Payment method:</span><br/>
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="paymentMetod" value="cash"> Cash</label>
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="paymentMetod" value="debitCard" checked> Debit Card</label>
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="paymentMetod" value="creditCard"> Credit Card</label><br/>
+						</div>
+						
+						<div class="paymentAndCategories ml-sm-5">
+							<span class="titleExpense ml-4">Expence category:</span><br/>
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="paymentCategory" value="food"> Food</label>
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="paymentCategory" value="housing costs" > Housing costs</label>
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="paymentCategory" value="transportation"> Transportation</label>
+								
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="paymentCategory" value="telecommunication"> Telecommunication</label>
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="paymentCategory" value="health care" > Health care</label>
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="paymentCategory" value="clothes"> Clothes</label>
+								
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="paymentCategory" value="hygiene"> Hygiene</label>
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="paymentCategory" value="children" > Children</label>
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="paymentCategory" value="entertainment"> Entertainment</label>
+								
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="paymentCategory" value="travel"> Travel</label>
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="paymentCategory" value="education" > Education</label>
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="paymentCategory" value="books"> Books</label>
 
-	</div>
-	<div id="footer">
-		Copyright © 2020 Personal Budget All Rights Reserved Thank you for your visit!
-	</div>
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="paymentCategory" value="savings"> Savings</label>
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="paymentCategory" value="pension" > Pension</label>
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="paymentCategory" value="debt repayment"> Debt repayment</label>
+								
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="paymentCategory" value="donation"> Donation</label>
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="paymentCategory" value="other expenses"> Other expenses</label><br/>
+						</div>
+						<div class="paymentAndCategories ml-sm-5">
+							<span class="titleExpense ml-4">Comment (optional):<br/></span>
+							<textarea id="comment" name="comment" rows="3" cols="35" placeholder="Add your comment"></textarea>
+						</div>
+						
+						<div class="expenseBtn col-8 col-md-6 offset-lg-1 col-lg-4 offset-lg-1">
+							<button class="btn btn-lg btn-block btn-login text-uppercase mb-2" type="reset" onclick="window.location.href = '#'">Cancel</button>
+						</div>
+							
+						<div class="expenseBtn col-8 col-md-6 offset-lg-1 col-lg-4 offset-lg-1">
+							<button class="btn btn-lg btn-block btn-login text-uppercase mb-2" type="submit">Submit</button>
+						</div>
+						<div style="clear:both;"></div>
+
+					</div>
+				</div>
+			</div>
+		</article>
+	</main>	
+	
+	<footer class="footer">
+	Copyright © 2020 Personal Budget All Rights Reserved Thank you for your visit!
+	</footer>
+	
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="js/bootstrap.min.js"></script>
 </body>
 </html>

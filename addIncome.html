@@ -31,7 +31,7 @@
 			</a>
 			<button class="btn text-uppercase mb-2 text-white font-weight-bold" type="button">Sign Out</button>
 		</nav>
-	</header>		
+	</header>	
 	
 	<div class="menu">	
 		
@@ -96,124 +96,43 @@
 					<div class="bg-white text-body">
 					
 						<header id="addData">			
-							<h4 class="text-uppercase text-center mr-4 subtitle">Balance of your expences and incomes</h4>
+							<h4 class="text-uppercase text-center subtitle">Add details of income</h4>
 						</header>
 					
 						<div class="labelExpense">
-							<label for="date1" class="titleExpense mr-1 mr-md-0 ml-2 ml-md-1 ml-lg-5">Start date:</label>
-							<input class="input text-muted mr-xl-5" id="date1" name="date1" type="date" value="2020-10-01" min="2018-01-01">
+							<label for="amount" class="titleExpense mr-1 mr-md-0 ml-2 ml-md-1 ml-lg-5">Amount:</label>
+							<input class="input mr-xl-5 text-muted" id="amount" name="amount" type="text" placeholder="1000">
 						</div>
 						
 						<div class="labelExpense">
-							<label for="date2" class="titleExpense mr-2 mr-md-0 ml-2 ml-md-1 ml-lg-5">End date:</label>
-							<input class="input text-muted ml-2 mr-4" id="date2" name="date2" type="date" value="2020-10-31" min="2018-01-01">
+							<label for="date" class="titleExpense mr-2 mr-md-0 ml-2 ml-md-1 ml-lg-5">Date:</label>
+							<input class="input ml-4 ml-lg-0 text-muted category" id="date" name="date" type="date" value="2020-11-27" min="2018-01-01">
 						</div>
 					
 						<div style="clear:both;"></div>
 				
-						<div class="summary">
-							<div id="summary">
-								<h2 class="h3">Your balance is 2006.29 PLN</h2>
-								<h2 class="h4 mb-4">Congratulations. You manage great your finance</h2>
-							</div>
+						<div class="paymentAndCategories ml-sm-5">
+							<span class="titleExpense ml-4">Income category:</span><br/>
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="category" value="salary"> Salary</label>
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="category" value="bankInterest" checked> Bank interest</label>
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="category" value="sales"> Sales</label>
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="category" value="other"> Other</label><br/>
 						</div>
-				
-						<section>
-					<h4 class="text-capitalize text-center subtitle">Revenue statement</h4>
-					<div class="revenue">
-						<div id="incomesTable">
-							<table class="table table-sm balanceTable">
-								<tr>
-									<th>Category</th>
-									<th>Amount in PLN</th>
-								</tr>
-								<tr>
-									<td>Salary</td>
-									<td>3000.00</td>
-								</tr>
-								<tr>
-									<td>Bank interest</td>
-									<td>12.64</td>
-								</tr>
-								<tr>
-									<td>Sales</td>
-									<td>120.00</td>
-								</tr>
-								<tr>
-									<td>Other</td>
-									<td>250.00</td>
-								</tr>
-								<tr class="total">
-									<td>Total</td>
-									<td>3382,64</td>
-								</tr>
-							</table>
+						
+						
+						<div class="paymentAndCategories ml-sm-5">
+							<span class="titleExpense ml-4">Comment (optional):<br/></span>
+							<textarea id="comment" name="comment" rows="3" cols="35" placeholder="Add your comment"></textarea>
 						</div>
-					</div>
-					<div class="revenue">
-						<div class="chartContainer">
-							<canvas id="incomeChart"></canvas> 
+						
+						<div class="expenseBtn col-8 col-md-6 col-lg-4 offset-lg-1">
+							<button class="btn btn-lg btn-block btn-login text-uppercase mb-2" type="reset" onclick="window.location.href = '#'">Cancel</button>
 						</div>
-					</div>				
-					<div style="clear:both"></div>						
-				</section>
-	
-				<section>
-					<h4 class="text-capitalize text-center subtitle">Expense statement</h4>
-					<div class="loss">
-						<div id="expensesTable">
-							<table class="table table-sm balanceTable">
-								<tr>
-									<th>Category</th>
-									<th>Amount in PLN</th>
-								</tr>
-								<tr>
-									<td>Food</td>
-									<td>340.00</td>
-								</tr>
-								<tr>
-									<td>Housing costs</td>
-									<td>650.00</td>
-								</tr>
-								<tr>
-									<td>Transportation</td>
-									<td>23.50</td>
-								</tr>
-								<tr>
-									<td>Telecommunication</td>
-									<td>23.65</td>
-								</tr>
-								<tr>
-									<td>Hygiene</td>
-									<td>13.20</td>
-								</tr>
-								<tr>
-									<td>Travel</td>
-									<td>120.00</td>
-								</tr>
-								<tr>
-									<td>Education</td>
-									<td>152.00</td>
-								</tr>
-								<tr>
-									<td>Books</td>
-									<td>54.00</td>
-								</tr>
-								<tr class="total">
-									<td>Total</td>
-									<td>1376,35</td>
-								</tr>
 							
-							</table>
+						<div class="expenseBtn col-8 col-md-6 col-lg-4 offset-lg-1">
+							<button class="btn btn-lg btn-block btn-login text-uppercase mb-2" type="submit">Submit</button>
 						</div>
-					</div>
-					<div class="loss">
-						<div class="chartContainer">
-							<canvas id="expenseChart"></canvas>
-						</div>
-					</div>						
-					<div style="clear:both"></div>						
-				</section>
+						<div style="clear:both;"></div>
 
 					</div>
 				</div>
@@ -228,8 +147,5 @@
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" defer></script>
-	<script src="charts.js" defer></script>
-	<script src="summary.js" defer></script>
 </body>
 </html>
