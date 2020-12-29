@@ -61,11 +61,20 @@
 		if ($date < 2018-01-01) 
 		{
 			$is_OK = false;
-			$_SESSION['e_date'] = "Date have to be after 1970-01-01";
+			$_SESSION['e_date'] = "Date have to be after 2018-01-01";
 		}
 		
-		
-		
+		//wybranie kategorii wpłaty
+		if(isset($_POST['category'])) 
+		{
+			$category = $_POST['category'];
+			$_SESSION['fr_category'] = $category;
+		}
+		else
+		{
+			$is_OK = false;
+			$_SESSION['e_category'] = "Choose income category.";
+		}
 		
 		// sprawdź długość comment
 		$comment = $_POST['comment'];
@@ -80,14 +89,15 @@
 		// Pamiętaj wprowadzone dane
 		$_SESSION['fr_amount'] = $amount;
 		$_SESSION['fr_date'] = $date;
-		$_SESSION['fr_income_category'] = $ategory;
+		$_SESSION['fr_category'] = $category;
 		$_SESSION['fr_comment'] = $comment;
 		
-				
-		require_once "connect.php";
-		mysqli_report(MYSQLI_REPORT_STRICT);
+		if ($is_OK == true)
+		{
+			require_once "connect.php";
+			mysqli_report(MYSQLI_REPORT_STRICT);
 		
-		try 
+			try 
 			{
 				$connection = new mysqli ($host, $db_user, $db_password, $db_name);
 				
@@ -99,11 +109,11 @@
 				else
 				{
 					$user_id = $_SESSION['id'];
-					$getting_income_category_id = $connection->query("SELECT id FROM incomes_category_assigned_to_users WHERE user_id = '$user_id' AND name = '$income_category'");
+					$getting_income_category_id = $connection->query("SELECT id FROM incomes_category_default WHERE user_id = '$user_id' AND name = '$category'");
 					$row = $getting_income_category_id->fetch_assoc();
 					$income_category_id = $row['id'];
 					
-					if ($connection->query("INSERT INTO incomes VALUES (NULL, '$user_id', '$income_category_id', '$income_amount', '$income_date', '$income_comment')"))
+					if ($connection->query("INSERT INTO incomes VALUES (NULL, '$user_id', '$category', '$amount', '$date', '$comment')"))
 					{
 						$_SESSION['successful_income_added']=true;
 						header('location: incomeSuccess.php');
@@ -114,12 +124,12 @@
 					}
 				}
 				$connection->close();
+			}
+			catch(Exception $e)
+			{
+				echo '<span style="color:red;">Server error! Please try again later.</span>';
+			}
 		}
-		catch(Exception $e)
-		{
-			echo '<span style="color:red;">Server error! Please try again later.</span>';
-		}
-		
 	}
 ?>
 
@@ -217,122 +227,128 @@
 			<div class="container">
 				
 				<div class="row">
-					
-					<div class="bg-white text-body">
-					
-						<header id="addData">			
-							<h4 class="text-uppercase text-center subtitle">Add details of income</h4>
-						</header>
-					
-						<div class="labelExpense">
-							<label for="amount" class="titleExpense mr-1 mr-md-0 ml-2 ml-md-1 ml-lg-5">Amount:</label>
-							<input class="input mr-xl-5 text-muted" id="amount" name="amount" type="text" value="<?php 
-								if(isset($_SESSION['fr_amount']))
-								{
-									echo $_SESSION['fr_amount'];
-									unset($_SESSION['fr_amount']);
-								}
-							?>" placeholder="1000.00">
-							<?php
-								if(isset($_SESSION['e_amount']))
-									{
-										echo '<div id="error">'.$_SESSION['e_amount'].'</div>';
-										unset($_SESSION['e_amount']);
-									}
-							?>			
-						</div>
+					<form method="post">
 						
-						<div class="labelExpense">
-							<label for="date" class="titleExpense mr-2 mr-md-0 ml-2 ml-md-1 ml-lg-5">Date:</label>
-							<input class="input ml-4 ml-lg-0 text-muted category" id="date" name="date" type="date" value="<?php 
-								if(isset($_SESSION['fr_date']))
-								{
-									echo $_SESSION['fr_date'];
-									unset($_SESSION['fr_date']);
-								}
-							?>" >
-							<?php
-								if(isset($_SESSION['e_date']))
-									{
-										echo '<div id="error">'.$_SESSION['e_date'].'</div>';
-										unset($_SESSION['e_date']);
-									}
-							?>	
-						</div>
-					
-						<div style="clear:both;"></div>
-				
-						<div class="paymentAndCategories ml-sm-5">
-							<span class="titleExpense ml-4">Income category:</span><br/>
-							<?php 
+						<div class="bg-white text-body">
 						
-							require_once "connect.php";
-							mysqli_report(MYSQLI_REPORT_STRICT);
-				
-							try
-							{
-								$connection = new mysqli ($host, $db_user, $db_password, $db_name);
-								
-								if ($connection->connect_errno!=0)
-								{
-									throw new Exception(mysqli_connect_errno());
-								}
-								else
-								{
-									$user_id = $_SESSION['id'];
-
-									if (!$result = $connection->query(sprintf("SELECT name FROM incomes_category_assigned_to_users WHERE user_id = '%s'", 
-									mysqli_real_escape_string($connection, $user_id)))) 
-									{
-										throw new Exception($connection->error);
-									}
-									
-									while ($row = $result->fetch_assoc())
-									{
-										echo "<option>" . $row['name'] . "</option>";
-									}
-									
-									$result->close();
-									$connection->close();
-								}
-							}
-							catch (Exception $e)
-							{
-								echo '<span style="color=red;">Server error. Please try again later.</span>';
-								//echo '<br />Detailed information: '.$e;
-							}
-						?>		
-						</div>
+							<header id="addData">			
+								<h4 class="text-uppercase text-center subtitle">Add details of income</h4>
+							</header>
 						
-						
-						<div class="paymentAndCategories ml-sm-5">
-							<span class="titleExpense ml-4">Comment (optional):<br/></span>
-							<textarea id="comment" name="comment" rows="3" cols="35" value="<?php 
-								if(isset($_SESSION['fr_comment']))
-								{
-									echo $_SESSION['fr_comment'];
-									unset($_SESSION['fr_comennt']);
-								}
-							?>" placeholder="Add your comment">
-							<?php
-								if(isset($_SESSION['e_comment']))
+							<div class="labelExpense">
+								<label for="amount" class="titleExpense mr-1 mr-md-0 ml-2 ml-md-1 ml-lg-5">Amount:</label>
+								<input class="input mr-xl-5 text-muted" id="amount" name="amount" type="text" value="<?php 
+									if(isset($_SESSION['fr_amount']))
 									{
-										echo '<div id="error">'.$_SESSION['e_comment'].'</div>';
-										unset($_SESSION['e_comment']);
+										echo $_SESSION['fr_amount'];
+										unset($_SESSION['fr_amount']);
 									}
-							?></textarea>
-						</div>
-						
-						<div class="expenseBtn col-8 col-md-6 col-lg-4 offset-lg-1">
-							<button class="btn btn-lg btn-block btn-login text-uppercase mb-2" type="reset" onclick="window.location.href = 'mainMenu.php'">Cancel</button>
-						</div>
+								?>" placeholder="1000.00">
+								<?php
+									if(isset($_SESSION['e_amount']))
+										{
+											echo '<div id="error">'.$_SESSION['e_amount'].'</div>';
+											unset($_SESSION['e_amount']);
+										}
+								?>			
+							</div>
 							
-						<div class="expenseBtn col-8 col-md-6 col-lg-4 offset-lg-1">
-							<button class="btn btn-lg btn-block btn-login text-uppercase mb-2" type="submit">Submit</button>
-						</div>
-						<div style="clear:both;"></div>
+							<div class="labelExpense">
+								<label for="date" class="titleExpense mr-2 mr-md-0 ml-2 ml-md-1 ml-lg-5">Date:</label>
+								<input class="input ml-4 ml-lg-0 text-muted category" id="date" name="date" type="date" value="<?php 
+									if(isset($_SESSION['fr_date']))
+									{
+										echo $_SESSION['fr_date'];
+										unset($_SESSION['fr_date']);
+									}
+								?>" >
+								<?php
+									if(isset($_SESSION['e_date']))
+										{
+											echo '<div id="error">'.$_SESSION['e_date'].'</div>';
+											unset($_SESSION['e_date']);
+										}
+								?>	
+							</div>
+						
+							<div style="clear:both;"></div>
+					
+							<div class="paymentAndCategories ml-sm-5">
+								<span class="titleExpense ml-4">Income category:</span><br/>
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="category" value="Salary"> Salary</label>
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="category" value="Interest" checked> Bank interest</label>
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="category" value="Allegro"> Allegro Sales</label>
+								<label class="paymentMetod col-11 col-md-4 col-lg-3 ml-lg-5"><input type="radio" name="category" value="Another"> Another</label><br/>
+								<?php 
+							
+								require_once "connect.php";
+								mysqli_report(MYSQLI_REPORT_STRICT);
+					
+								try
+								{
+									$connection = new mysqli ($host, $db_user, $db_password, $db_name);
+									
+									if ($connection->connect_errno!=0)
+									{
+										throw new Exception(mysqli_connect_errno());
+									}
+									else
+									{
+										$user_id = $_SESSION['id'];
 
-					</div>
+										if (!$result = $connection->query(sprintf("SELECT name FROM incomes_category_assigned_to_users WHERE user_id = '%s'", 
+										mysqli_real_escape_string($connection, $user_id)))) 
+										{
+											throw new Exception($connection->error);
+										}
+										
+										while ($row = $result->fetch_assoc())
+										{
+											
+										}
+										
+										$result->close();
+										$connection->close();
+									}
+								}
+								catch (Exception $e)
+								{
+									echo '<span style="color:red;">Server error. Please try again later.</span>';
+									//echo '<br />Detailed information: '.$e;
+								}
+							?>
+							</div>
+							
+							
+							<div class="paymentAndCategories ml-sm-5">
+								<span class="titleExpense ml-4">Comment (optional):<br/></span>
+								<textarea id="comment" name="comment" rows="3" cols="35" value="<?php 
+									if(isset($_SESSION['fr_comment']))
+									{
+										echo $_SESSION['fr_comment'];
+										unset($_SESSION['fr_comennt']);
+									}
+								?>" placeholder="Add your comment">
+								<?php
+									if(isset($_SESSION['e_comment']))
+										{
+											echo '<div id="error">'.$_SESSION['e_comment'].'</div>';
+											unset($_SESSION['e_comment']);
+										}
+								?></textarea>
+							</div>
+							
+							<div class="expenseBtn col-8 col-md-6 col-lg-4 offset-lg-1">
+								<button class="btn btn-lg btn-block btn-login text-uppercase mb-2" type="reset" onclick="window.location.href = 'mainMenu.php'">Cancel</button>
+							</div>
+								
+							<div class="expenseBtn col-8 col-md-6 col-lg-4 offset-lg-1">
+								<button class="btn btn-lg btn-block btn-login text-uppercase mb-2" type="submit">Submit</button>
+							</div>
+							<div style="clear:both;"></div>
+
+						</div>
+					</form>
 				</div>
 			</div>
 		</article>

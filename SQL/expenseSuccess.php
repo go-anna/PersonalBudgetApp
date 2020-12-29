@@ -9,19 +9,21 @@
 	}
 	else
 	{
-		unset($_SESSION['successful_income_added']);
+		unset($_SESSION['successful_expense_added']);
 	}
 	
 	// Usuwanie wszystkich zmiennych
 	if (isset($_SESSION['fr_amount'])) unset($_SESSION['fr_amount']);
 	if (isset($_SESSION['fr_date'])) unset($_SESSION['fr_date']);
-	if (isset($_SESSION['fr_category'])) unset($_SESSION['fr_category']);
+	if (isset($_SESSION['fr_payment_category'])) unset($_SESSION['fr_payment_category']);
+	if (isset($_SESSION['fr_expense_category'])) unset($_SESSION['fr_expense_category']);
 	if (isset($_SESSION['fr_comment'])) unset($_SESSION['fr_comment']);
 	
-	// Usuwanie błędów 
+	// Usuwanie błędów
 	if (isset($_SESSION['e_amount'])) unset($_SESSION['e_amount']);
 	if (isset($_SESSION['e_date'])) unset($_SESSION['e_date']);
-	if (isset($_SESSION['e_category'])) unset($_SESSION['e_category']);
+	if (isset($_SESSION['e_payment_category'])) unset($_SESSION['e_payment_category']);
+	if (isset($_SESSION['e_expense_category'])) unset($_SESSION['e_expense_category']);
 	if (isset($_SESSION['e_comment'])) unset($_SESSION['e_comment']);
 		
 ?>
@@ -63,8 +65,8 @@
 	
 		<div class="offset-md-2 col-lg-8 offset-md-2 text-body wpis">
 
-			<h3 class="h2 text-md-left text-center">Thank you for adding new income.<br><br>
-			<a href="addIncome.php">Now you can add another income!</a> 
+			<h3 class="h2 text-md-left text-center">Thank you for adding new expense.<br><br>
+			<a href="addExpense.php">Now you can add another expense!</a> 
 			</h3>
 
 		</div>
