@@ -4,9 +4,16 @@
 	
 	if(!isset($_SESSION['login']))
 	{
-		header('Location: index.php');
+		header ('Location: index.php');
 		exit();
 	}
+	
+	
+	if(isset($_SESSION['selected_start_date']))
+		unset($_SESSION['selected_start_date']);
+    
+	if(isset($_SESSION['selected_end_date']))
+		unset($_SESSION['selected_end_date']);
 	
 ?>
 
@@ -39,11 +46,11 @@
 		<nav class="navbar navbar-dark">
 			<a class="navbar-brand" href="mainMenu.php"><img src="img/piggyL.png" width="80" height="80" class="d-inline-block mr-1 align-top" alt="Logo Personal Budget"></a>
 			<a class="navbar-text">
-				<h1 class="text-uppercase text-center text-md-left d-none d-md-block">Welcome to Personal Budget app</h1>
+					<h1 class="text-uppercase text-center text-md-left d-none d-md-block">Welcome to Personal Budget app</h1>
 			</a>
-			<button class="btn text-uppercase mb-2 text-white font-weight-bold" type="button"><a href="logout.php" style="color:inherit">Sign Out</button></a>
+			<button class="btn text-uppercase mb-2 text-white font-weight-bold" type="button">Sign Out</button>
 		</nav>
-	</header>	
+	</header>		
 	
 	<div class="menu">	
 		
@@ -86,9 +93,39 @@
 		</nav>
 	</div>
 	
-	<?php
-	echo "<p>Witaj ".$_SESSION['username']."</p>";
-	?>
+	<main>
+		<article class="expense">
+			<div class="container">
+				<div class="text-justify">
+					<form action="showBalanceDates.php" method="post">
+						<div class="bg-white text-body">
+						
+							<header id="addData">			
+								<h4 class="text-uppercase text-center subtitle">Balance of your expences and incomes</h4>
+							</header>
+							
+							<div class="form-group mb-2 w-75 mx-auto">
+								<div class="input-group-prepend w-100 justify-content-center">
+									<span class="input-group-text w-50 mr-1 mt-2">Select period of time</span>
+								
+								<select class="form-control mt-2" id="period_of_time" name="period_of_time">
+									<option  value="current_month">Current month</option>
+									<option  value="previous_month">Previous month</option>
+									<option  value="current_year">Current year</option>
+									<option  value="custom_date">Custom date</option>
+								</select>
+				
+							<button class="btn text-uppercase ml-2" type="submit">Submit</button>	
+							
+								</div>
+									<br/>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</article>
+	</main>	
 	
 	<footer class="footer">
 	Copyright © 2020 Personal Budget All Rights Reserved Thank you for your visit!

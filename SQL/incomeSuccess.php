@@ -15,13 +15,13 @@
 	// Usuwanie wszystkich zmiennych
 	if (isset($_SESSION['fr_amount'])) unset($_SESSION['fr_amount']);
 	if (isset($_SESSION['fr_date'])) unset($_SESSION['fr_date']);
-	if (isset($_SESSION['fr_category'])) unset($_SESSION['fr_category']);
+	if (isset($_SESSION['fr_income_category'])) unset($_SESSION['fr_income_category']);
 	if (isset($_SESSION['fr_comment'])) unset($_SESSION['fr_comment']);
 	
 	// Usuwanie błędów 
 	if (isset($_SESSION['e_amount'])) unset($_SESSION['e_amount']);
 	if (isset($_SESSION['e_date'])) unset($_SESSION['e_date']);
-	if (isset($_SESSION['e_category'])) unset($_SESSION['e_category']);
+	if (isset($_SESSION['e_income_category'])) unset($_SESSION['e_income_category']);
 	if (isset($_SESSION['e_comment'])) unset($_SESSION['e_comment']);
 		
 ?>
@@ -53,11 +53,11 @@
 <body>
 	<header>
 		<nav class="navbar navbar-dark">
-			<a class="navbar-brand" href="mainMenu.html"><img src="img/piggyL.png" width="80" height="80" class="d-inline-block mr-1 align-top" alt="Logo Personal Budget"></a>
+			<a class="navbar-brand" href="mainMenu.php"><img src="img/piggyL.png" width="80" height="80" class="d-inline-block mr-1 align-top" alt="Logo Personal Budget"></a>
 			<a class="navbar-text order-last order-sm-last">
 					<h1 class="text-uppercase text-center">Welcome to Personal Budget app</h1>
 			</a>
-			<button class="btn text-uppercase mb-2 text-white font-weight-bold order-md-last" type="button"><a href="index.php" style="color:inherit">Sign In</a></button>
+			<button class="btn text-uppercase mb-2 text-white font-weight-bold order-md-last" type="button"><a href="index.php" style="color:inherit">Sign In</button></a>
 		</nav>
 	</header>	
 	

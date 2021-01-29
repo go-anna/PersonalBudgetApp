@@ -52,7 +52,7 @@
 <body>
 	<header>
 		<nav class="navbar navbar-dark">
-			<a class="navbar-brand" href="mainMenu.html"><img src="img/piggyL.png" width="80" height="80" class="d-inline-block mr-1 align-top" alt="Logo Personal Budget"></a>
+			<a class="navbar-brand" href="mainMenu.php"><img src="img/piggyL.png" width="80" height="80" class="d-inline-block mr-1 align-top" alt="Logo Personal Budget"></a>
 			<a class="navbar-text order-last order-sm-last">
 					<h1 class="text-uppercase text-center">Welcome to Personal Budget app</h1>
 			</a>
